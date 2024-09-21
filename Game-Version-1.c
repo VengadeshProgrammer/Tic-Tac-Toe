@@ -14,7 +14,7 @@ const char *BlockSideMatchL(void);
 const char *BlockSideMatchR(void);
 const char *PlacePlayer(int POSROW, int POSCOL);
 const char *BlockHorizontalViseVersaMatch(void);
-const char *BlockHorizontalCenterMatch(void);
+const char *BlockHorizontalCenterMatch(void); 
 const char *BlockVerticalViseVersaMatch(void);
 const char *BlockVerticalCenterMatch(void);
 const char *BlockSideMatchLViseVersa(void);
