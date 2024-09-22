@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h> // Header Files
-#include <time.h>
 #define ROW 3                              // ROW = 3
 #define COL 3                              // COL = 3
 char map[ROW][COL];                        // Define a MAP ARRAY of ROW x COL
@@ -512,13 +511,12 @@ const char *BlockSideMatchRViseVersa(int CheckPplayerWin)
             break;
         for (int j = 0; j < COL; j++)
         {
-            if (map[ROW - 3][COL - 3] == PPLAYER && map[ROW-2][COL-2] == PPLAYER && map[ROW - 3][COL - 3] != '\0' && map[ROW - 2][COL - 2] != '\0')
+            if (map[ROW - 3][COL - 1] == PPLAYER && map[ROW-2][COL-2] == PPLAYER && map[ROW - 3][COL - 1] != '\0' && map[ROW - 2][COL - 2] != '\0')
             {
-                if (map[ROW - 1][COL - 1] == '\0')
+                if (map[ROW - 3][COL - 3] == '\0')
                 {
-                    map[ROW - 1][COL - 1] = PPLAYER;
+                    map[ROW - 3][COL - 3] = PPLAYER;
                     turn = 0;
-    
                     return "Winner!";
                 }
                 }
@@ -533,11 +531,11 @@ const char *BlockSideMatchRViseVersa(int CheckPplayerWin)
             break;
         for (int j = 0; j < COL; j++)
         {
-            if (map[ROW - 3][COL - 3] == map[ROW - 2][COL - 2] && map[ROW - 3][COL - 3] != '\0' && map[ROW - 2][COL - 2] != '\0')
+            if (map[ROW - 3][COL - 1] == map[ROW - 2][COL - 2] && map[ROW - 3][COL - 1] != '\0' && map[ROW - 2][COL - 2] != '\0')
             {
-                if (map[ROW - 1][COL - 1] == '\0')
+                if (map[ROW - 3][COL - 3] == '\0')
                 {
-                    map[ROW - 1][COL - 1] = PPLAYER;
+                    map[ROW - 3][COL - 3] = PPLAYER;
                     turn = 0;
                     return "Blocked";
                 }
@@ -600,13 +598,12 @@ const char *BlockSideMatchLViseVersa(int CheckPplayerWin)
             break;
         for (int j = 0; j < COL; j++)
         {
-            if (map[ROW - 3][COL - 3] == PPLAYER && map[ROW - 2][COL - 2] == PPLAYER && map[ROW - 3][COL - 3] != '\0' && map[ROW - 2][COL - 2] != '\0')
+            if (map[ROW - 3][COL - 1] == PPLAYER && map[ROW - 2][COL - 2] == PPLAYER && map[ROW - 3][COL - 1] != '\0' && map[ROW - 2][COL - 2] != '\0')
             {
-                if (map[ROW - 3][COL - 3] == '\0')
+                if (map[ROW - 1][COL - 3] == '\0')
                 {
-                    map[ROW - 1][COL - 1] = PPLAYER;
+                    map[ROW - 1][COL - 3] = PPLAYER;
                     turn = 0;
-    
                     return "Winner!";
                 }
             }
@@ -621,11 +618,11 @@ const char *BlockSideMatchLViseVersa(int CheckPplayerWin)
             break;
         for (int j = 0; j < COL; j++)
         {
-            if (map[ROW - 3][COL - 3] == map[ROW - 2][COL - 2] && map[ROW - 3][COL - 3] != '\0' && map[ROW - 2][COL - 2] != '\0')
+            if (map[ROW - 3][COL - 1] == map[ROW - 2][COL - 2] && map[ROW - 3][COL - 1] != '\0' && map[ROW - 2][COL - 2] != '\0')
             {
-                if (map[ROW - 3][COL - 3] == '\0')
+                if (map[ROW - 1][COL - 3] == '\0')
                 {
-                    map[ROW - 1][COL - 1] = PPLAYER;
+                    map[ROW - 1][COL - 3] = PPLAYER;
                     turn = 0;
                     return "Blocked";
                 }
@@ -795,7 +792,6 @@ int main()
 {
 
     // main function to assemble all functions with algorithms
-    srand(time(0));
     if (POSROW == 0 && POSCOL == 0)
     {
         // saves the player character
