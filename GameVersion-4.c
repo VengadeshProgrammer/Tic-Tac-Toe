@@ -838,7 +838,7 @@ int main()
             printf("\n Enter The COL Position : ");
             scanf("%hu", &POSCOL);
             PlacePlayer(POSROW, POSCOL);
-            DisplayGrid(POSROW, POSCOL);
+            DisplayGrid();
         }
     }
     else
